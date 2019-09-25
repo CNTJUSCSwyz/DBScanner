@@ -11,12 +11,12 @@ service = {'mssql':'1433',
            'mongodb':'27017'}
 
 passwd = ['123456','admin','root','password','123123','123','1','','{user}',
-		  '{user}{user}','{user}1','{user}123','{user}2016','{user}2015',
+		  '{user}{user}','{user}1','{user}123','{user}2016','{user}2017',
 		  '{user}!','P@ssw0rd!!','qwa123','12345678','test','123qwe!@#',
 		  '123456789','123321','1314520','666666','woaini','fuckyou','000000',
 		  '1234567890','8888888','qwerty','1qaz2wsx','abc123','abc123456',
 		  '1q2w3e4r','123qwe','159357','p@ssw0rd','p@55w0rd','password!',
-		  'p@ssw0rd!','password1','r00t','system','111111','admin']
+		  'p@ssw0rd!','password1','r00t','system','111111','manager']
 
 #colour
 W = '\033[0m'

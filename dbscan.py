@@ -16,15 +16,22 @@ from lib.exploit import *
 monkey.patch_all()
 
 class DBScanner(object):
-	def __init__(self, target, thread):
+	def __init__(self, target, thread,services,passfile):
 		self.target = target
 		self.thread = thread
 		self.ips    = []
 		self.ports  = []
 		self.time   = time.time()
+		self.services=services
+		if services is None:
+			pass
+		else:
+			service[services.split(":")[0].strip()]=services.split(":")[1].strip()
+		self.passfile = passfile
+		self.service = service
 		self.get_ip()
 		self.get_port()
-		self.check = check()
+		self.check = check(self.passfile)
 	
 	def get_ip(self):
 		#获取待扫描地址段
@@ -100,13 +107,16 @@ def banner():
 	print B + banner + W
 	print '-'*55
 
+
 def main():
 	banner()
 	parser = argparse.ArgumentParser(description='Example: python {} 192.168.1.0/24'.format(sys.argv[0]))
 	parser.add_argument('target', help=u'192.168.1.0/24')
 	parser.add_argument('-t', type=int, default=50, dest='thread', help=u'线程数(默认50)')
+	parser.add_argument('-s', type=str,default=None ,dest='services', help=u'可指定服务端口,格式为mysql:3306')
+	parser.add_argument('-f', type=str,default=None ,dest='passfile', help=u'可指定密码字典文件路径')
 	args   = parser.parse_args()
-	myscan = DBScanner(args.target, args.thread)
+	myscan = DBScanner(args.target, args.thread,args.services,args.passfile)
 	myscan.run()
 
 if __name__ == '__main__':
