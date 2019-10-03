@@ -16,7 +16,10 @@
 - [ ] 添加其他未授权访问扫描模块
 
 ## attention!
-you need install some modules:
+if your os-system is Ubuntu,you need install some modules:
 ```
 apt-get install libmysqlclient-dev libpq-dev python-dev
 ```
+
+## how to install
+pip -r requirements.txt
