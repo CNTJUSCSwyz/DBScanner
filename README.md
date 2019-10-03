@@ -12,5 +12,11 @@
 
 ## todo list
 
-- [ ] 添加requirements
+- [x] 添加requirements.txt (2019.10.03)
 - [ ] 添加其他未授权访问扫描模块
+
+## attention!
+you need install some modules:
+```
+apt-get install libmysqlclient-dev libpq-dev python-dev
+```

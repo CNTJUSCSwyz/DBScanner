@@ -1,0 +1,12 @@
+certifi==2019.9.11
+chardet==3.0.4
+cx-Oracle==7.2.3
+gevent==1.4.0
+greenlet==0.4.15
+idna==2.8
+IPy==1.0
+MySQL-python==1.2.5
+psycopg2==2.8.3
+pymongo==3.9.0
+requests==2.22.0
+urllib3==1.25.6
